@@ -85,20 +85,27 @@ special.forEach((spec) => {
                 operator = "";
                 secondNumber = null;
                 break;
+            
             case "del": 
                 display.textContent = display.textContent.length > 1 
                 ? display.textContent.slice(0, -1)
                 : "0";
+                break;
+            
             case "%":
                 display.textContent = parseFloat(display.textContent) / 100;
+                break;
+            
             case "+/-":
                 display.textContent *= -1;
-
+                break;
+            
             case ".":
                 if (display.textContent.includes(".")) {
                     break;
                 }
                 display.textContent += ".";
+                break;
             default:
                 break;
         }
